@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@1.5.1/dist/axios.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroy Audit</title>
+</head>
+<body>
+    <main>
+        <section class="px-5 py-6 py-xxl-10 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform" style="background-image: url('./img/sud_1.jpg');">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white">
+                <img class="d-block mx-auto mb-4" style="border-radius: 5%;" src="{{ url_for('send_file', filename='stroyaudit.png') }}" alt="" width="172" height="57">
+                <!-- <h1 class="display-3 fw-bold mb-3">LEGALTEAM</h1> -->
+                <ul class="text-start fs-5">
+                  <li>Более 12 лет опыта в строительной сфере</li>
+                  <li>Более 10 000 успешных кейсов</li>
+                  <li>Более 500 судебных дел в Республике Казахстан</li>
+                  <li>Более 3 млрд тенге c экономили нашим клиентам</li>
+                  <li>Более 92% побед в судах</li>
+                </ul>
+                <p class="lead mb-1 fs-4">ГОТОВЫЕ ЮРИДИЧЕСКИЕ РЕШЕНИЯ ДЛЯ КОМПАНИЙ В АЛМАТЫ.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="#vue" class="btn btn-outline-light btn-lg px-4">Получить консультацию</a>
+                  </div>
+                <!-- <p class="lead mb-5 mt-3 ">Предотвращение судов, штрафов, издержек, не исполнения обязательств и предписаний</p> -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 fs-1 text-center">ПОЧЕМУ ВЫГОДНО СОТРУДНИЧАТЬ С НАМИ</h2>
+            <div class="row g-4 py-3 justify-content-center row-cols-1 row-cols-lg-3">
+              <div id="carouselExampleIndicators" class="justify-content-center carousel slide" style="width: 90%;">
+                <div class="container mb-3" style="position: relative; text-align: center;">
+                <button class="btn btn-dark text-center mb-3 btn-lg" id="btn_1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="text-center" aria-hidden="true"></span>
+                  <span class="text-center">Экономическая выгода</span>
+                </button>
+                <button class="btn btn-outline-dark text-center mb-3  btn-lg" id="btn_2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="text-center" aria-hidden="true"></span>
+                  <span class="text-center">Профессиональная выгода</span>
+                </button>
+              </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <table class="table" style="height: 28rem;">
+                      <thead>
+                        <tr>
+                          <th scope="col">Приблизительные расчеты</th>
+                          <th scope="col">тенге/год</th>
+                          <th scope="col">Строй Аудит</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group">
+                        <tr>
+                          <th scope="row">Заработная плата</th>
+                          <td >от 7 000 000</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Налоги</th>
+                          <td>1 800 000</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Рабочее место</th>
+                          <td>400 000</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Канцелярия</th>
+                          <td>50 000</td>
+                          <td>0</td>
+                        </tr>
+                        <tr class="table-secondary">
+                          <th scope="row">Итого за первый год</th>
+                          <td>от 9 250 000</td>
+                          <td>3 500 000</td>
+                        </tr>
+                        <tr class="table-secondary">
+                          <th scope="row">Далее ежегодно</th>
+                          <td>от 9 250 000</td>
+                          <td>3 500 000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="lead fs-4 text-center">Итого: услуги «СтройАудит» выгоднее почти в 3 раза.</p>
+                  </div>
+                  <div class="carousel-item">
+                    <p class="lead fs-4 fw-semibold text-center">Почему сложно найти высококвалифицированного юриста?</p>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-4 mb-3">
+                        <div class="card" style="height: 18rem;">
+                          <div class="card-body">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-x-fill mb-2" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            <h5 class="card-title">Дефицит кадров</h5>
+                            <p class="card-text">В Казахстане наблюдается серьезный дефицит  квалифицированных юристов.
+                              В особенности квалифицированных специалистов с большим опытом работы в строительной отрасли.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 mb-3">
+                        <div class="card" style="height: 18rem;">
+                          <div class="card-body">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-raised-hand mb-2" viewBox="0 0 16 16">
+                              <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a.998.998 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207Z"/>
+                              <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
+                            </svg>
+                            <h5 class="card-title">Штатный юрист общей практики</h5>
+                            <p class="card-text">В Казахстане наблюдается серьезный дефицит  квалифицированных юристов.
+                              В особенности квалифицированных специалистов с большим опытом работы в строительной отрасли.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="lead fs-4 fw-bolder text-center">Преимущества "СтройАудит"</p>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-4 mb-3">
+                        <div class="card" style="height: 15rem;">
+                          <div class="card-body">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-hand-thumbs-up mb-2" viewBox="0 0 16 16">
+                              <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                            </svg>
+                            <h5 class="card-title">Большой опыт в строительной отрасли</h5>
+                            <p class="card-text">В нашей команде - специалисты с большим опытом в сфере юридических услуг для строительных компаний</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 mb-3">
+                        <div class="card" style="height: 15rem;">
+                          <div class="card-body">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-people-fill mb-2" viewBox="0 0 16 16">
+                              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                            </svg>
+                            <h5 class="card-title">Команда юристов</h5>
+                            <p class="card-text">Над каждым проектом работает команда специалистов, знающие специфику строительного бизнеса</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+        </div>
+
+          <h2 class="pb-2 fs-1 text-center">95% СТРОИТЕЛЬНЫХ КОМПАНИЙ</h2>
+          <p class="lead fs-4 fw-semibold text-center">СТАЛКИВАЮТСЯ СО СЛЕДУЮЩИМИ ПРОБЛЕМАМИ</p>
+          <div class="container py-5">
+          <div class="d-md-flex justify-content-center flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class="card me-md-3 pt-3 mb-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 3%;">
+              <div class="my-3 py-3">
+                <h2 class="">Подрядчик не исполняет обязательства</h2>
+                <p class="lead">Вы понесете материальные затраты, а также не сдадите объект в срок</p>
+              </div>
+              <img src="{{ url_for('send_file', filename='heroi_1_img.jpg') }}" class="bg-body-tertiary shadow-sm mx-auto" style="width: 100%; height: 290px; border-radius: 21px 21px 0 0;">
+            </div>
+            <div class="card me-md-3 mb-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 3%;">
+              <div class="my-3 p-3">
+                <h2 class="">Отсутствие строительной лицензии</h2>
+                <p class="lead">Вы понесете материальные затраты, а также не сдадите объект в срок</p>
+              </div>
+              <img src="{{ url_for('send_file', filename='heroi_2_img.jpg') }}" class="bg-body-tertiary shadow-sm mx-auto" style="width: 100%; height: 290px; border-radius: 21px 21px 0 0;">
+            </div>
+          </div>
+          <div class="d-md-flex justify-content-center flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class=" card me-md-3  mb-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 3%;">
+              <div class="my-3 py-3">
+                <h2 class="">Предписание за несоблюдение гост и снип</h2>
+                <p class="lead">Вы понесете материальные затраты, а также не сдадите объект в срок</p>
+              </div>
+              <img src="{{ url_for('send_file', filename='heroi_3_img.jpg') }}" class="bg-body-tertiary shadow-sm mx-auto" style="width: 100%; height: 290px; border-radius: 21px 21px 0 0;">
+            </div>
+            <div class="card me-md-3 mb-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border-radius: 3%;">
+              <div class="my-3 p-3">
+                <h2 class="">Кредиторская и дебиторская задолжности</h2>
+                <p class="lead">Вы понесете материальные затраты, а также не сдадите объект в срок</p>
+              </div>
+              <img src="{{ url_for('send_file', filename='heroi_4_img.jpg') }}" class="bg-body-tertiary shadow-sm mx-auto" style="width: 100%; height: 290px; border-radius: 21px 21px 0 0;">
+            </div>
+          </div>
+        </div>
+
+
+        <h2 class="pb-2 fs-1 mt-5 text-center">УСПЕХ КОМПАНИИ ЗАВИСИТ</h2>
+          <p class="lead mb-1 fs-2 text-center">от профилактики грядущих проблем</p>
+        
+          <div class="container py-3">
+            <div class="row justify-content-center">
+              <div class="col-sm-3 mb-3">
+                <div class="card" style="height: 20rem;">
+                  <div class="card-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-compass mb-2" viewBox="0 0 16 16">
+                      <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                      <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                    </svg>
+                    <h5 class="card-title">Юридическое сопровождение</h5>
+                    <p class="card-text">Сопровождение строительных компаний для демонстрации работ</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3">
+                <div class="card" style="height: 20rem;">
+                  <div class="card-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-bank mb-2" viewBox="0 0 16 16">
+                      <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                    </svg>
+                    <h5 class="card-title">Сервисное обслуживание</h5>
+                    <p class="card-text">Вместе с юридическими услугами, Вы получаете наработанную годами надежную партнерскую сеть из судебных исполнителей, банкротных управляющих, адвокатов, нотариусов, налоговых консультантов, оценщиков и других.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3">
+                <div class="card" style="height: 20rem;">
+                  <div class="card-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-hand-thumbs-up mb-2" viewBox="0 0 16 16">
+                      <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                    </svg>
+                    <h5 class="card-title">Успешный опыт в защите бизнеса</h5>
+                    <p class="card-text">Опытные специалисты STROYAUDIT детально оценят ситуацию, определят Ваши потребности и предложат оптимальные пути решения.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-sm-5 mb-3">
+                <div class="card" style="height: 20rem;">
+                  <div class="card-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-star-fill mb-2" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <h5 class="card-title">Качественная правовая помощь и надежная защита</h5>
+                    <p class="card-text">В юридической сфере встречаются некомпетентные и зачастую непорядочные юристы и фирмы. Вы получаете сервис высоких стандартов, а мы, в свою очередь, предлагаем и добиваемся конкретного результата, доказательством которого является 92% побед в суде.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3">
+                <div class="card" style="height: 20rem;">
+                  <div class="card-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-coin mb-2" viewBox="0 0 16 16">
+                      <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                    </svg>
+                    <h5 class="card-title">За нашу работу платит должник</h5>
+                    <p class="card-text">Ваши затраты - это не только стоимость услуги, но и потраченное время, возможные риски, эмоциональные затраты. Возмещение этих и других издержек должен понести виновник.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 fs-1 text-center">О КОМПАНИИ В ЦИФРАХ</h2>
+            <div class="row g-4 py-5 justify-content-center row-cols-1 row-cols-lg-3">
+              <div class="col align-items-center">
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">12</div>
+                  </div>
+                <div>
+                  <h3 class="mt-2 fs-5 text-body-emphasis text-center">лет опыта в строительной сфере</h3>
+                </div>
+              </div>
+              <div class="col align-items-center">
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">100000</div>
+                  </div>
+                <div>
+                  <h3 class="fs-5 text-center mt-2 text-body-emphasis">Более 100000 договоров подряда составлено</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <!-- d-flex -->
+              <div class="col  align-items-center">
+                <!-- d-inline-flex flex-shrink-0 align-items-center justify-content-center -->
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">10000</div>
+                  </div>
+                <div>
+                  <h3 class="mt-2 fs-5 text-body-emphasis text-center ">Успешных кейсов</h3>
+                </div>
+              </div>
+              <div class="col align-items-center">
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">500</div>
+                  </div>
+                <div>
+                  <h3 class="mt-2 fs-5 text-body-emphasis text-center">Судебных дел</h3>
+                </div>
+              </div>
+              <div class="col align-items-center">
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">25</div>
+                  </div>
+                <div>
+                  <h3 class="fs-5 text-center mt-2 text-body-emphasis">Компании обслуживается у нас</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4 py-5 justify-content-center row-cols-1 row-cols-lg-3">
+                <!-- d-flex -->
+              <div class="col  align-items-center">
+                <!-- d-inline-flex flex-shrink-0 align-items-center justify-content-center -->
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">3</div>
+                  </div>
+                <div>
+                  <h3 class="mt-2 fs-5 text-body-emphasis text-center ">более 3 млрд тенге взыскано</h3>
+                </div>
+              </div>
+              <div class="col align-items-center">
+                <div class="icon-square text-body-emphasis text-center fs-4 me-3">
+                    <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+                    <div class="num out-num">92</div>
+                  </div>
+                <div>
+                  <h3 class="mt-2 fs-5 text-body-emphasis text-center">процентов побед в судах</h3>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        
+          <div id="vue" class="container col-xl-10 col-xxl-8 px-4 py-5">
+            
+            <div class="row align-items-center g-lg-5 py-5">
+              <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Узнайте как составить договор с наименьшими рисками бесплатно</h1>
+                <p class="col-lg-10 fs-4">Оставьте заявку и получите документ в PDF формате</p>
+              </div>
+              <div class="col-md-10 mx-auto col-lg-5">
+                <div class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                  <div class="form-floating mb-3">
+                    <input type="text" id="name" v-model="name" class="form-control">
+                    <label for="floatingInput">Имя</label>
+                    <div class="invalid-feedback" id="valid_name" style="display: none;">
+                      Требуется указать имя.
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="number" v-model="number" class="form-control no-arrow" id="number">
+                    <label for="floatingPassword">Номер</label>
+                    <div class="invalid-feedback" id="valid_number" style="display: none;">
+                      Требуется указать номер.
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" v-model="email" class="form-control" id="email">
+                    <label for="floatingPassword">Email</label>
+                    <div class="invalid-feedback" id="valid_email" style="display: none;">
+                      Требуется указать Email.
+                    </div>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-primary" id="send" @click="getSend">Получить консультацию</button>
+                  <hr class="my-4">
+                  <div class="text-dark text-center fs-3" id="valid_send" style="display: none;">
+                    Заявка отправлена
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 fs-1 text-center">НАШИ КЛИЕНТЫ</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col align-items-center">
+                <div>
+                    <div class="logos over">
+                        <div class="logos-slide">
+                          <img src="{{ url_for('send_file', filename='logo-min.png') }}"/>
+                          <img src="{{ url_for('send_file', filename='btk.png') }}"/>
+                          <img src="{{ url_for('send_file', filename='-гешенкэ_кривые.png') }}" />
+                          <img src="{{ url_for('send_file', filename='del-sot.png')}}" />
+                          <img src="{{ url_for('send_file', filename='img-20160812-wa0000.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='logo_1.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='ATS_008.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='logo_2.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='Group_9.svg')}}" />
+                          <img src="{{ url_for('send_file', filename='psg_energi.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='amal.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='isg.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='emiks.jpg')}}" />
+                          <img src="{{ url_for('send_file', filename='areal.jpg')}}" />
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+
+
+    </main>
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item nav-link px-2 fs-1 text-body-secondary fw-bold">Контакты</li>
+        </ul>
+        <p class="text-body-secondary text-center">Алматы, ул. Сатпаева 32, офис 21</p>
+        <p class="text-body-secondary text-center"><a class="text-dark" href="tel:+70774444140">+7 (707) 4-444-140</a></p>
+        <p class="fs-5 text-body-secondary text-center">stroyaudit.kz@gmail.com</p>
+        <div class="w-100 m-auto justify-content-center text-center">
+          <a href="https://wa.me/77074444140">
+            <svg class=" col m-auto" width="48px" height="48px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM69.7626 28.9928C64.6172 23.841 57.7739 21.0027 50.4832 21C35.4616 21 23.2346 33.2252 23.2292 48.2522C23.2274 53.0557 24.4823 57.7446 26.8668 61.8769L23 76L37.4477 72.2105C41.4282 74.3822 45.9107 75.5262 50.4714 75.528H50.4823C65.5029 75.528 77.7299 63.301 77.7363 48.2749C77.7408 40.9915 74.9089 34.1446 69.7626 28.9928ZM62.9086 53.9588C62.2274 53.6178 58.8799 51.9708 58.2551 51.7435C57.6313 51.5161 57.1766 51.4024 56.7228 52.0845C56.269 52.7666 54.964 54.2998 54.5666 54.7545C54.1692 55.2092 53.7718 55.2656 53.0915 54.9246C52.9802 54.8688 52.8283 54.803 52.6409 54.7217C51.6819 54.3057 49.7905 53.4855 47.6151 51.5443C45.5907 49.7382 44.2239 47.5084 43.8265 46.8272C43.4291 46.1452 43.7837 45.7769 44.1248 45.4376C44.3292 45.2338 44.564 44.9478 44.7987 44.662C44.9157 44.5194 45.0328 44.3768 45.146 44.2445C45.4345 43.9075 45.56 43.6516 45.7302 43.3049C45.7607 43.2427 45.7926 43.1776 45.8272 43.1087C46.0545 42.654 45.9409 42.2565 45.7708 41.9155C45.6572 41.6877 45.0118 40.1167 44.4265 38.6923C44.1355 37.984 43.8594 37.3119 43.671 36.8592C43.1828 35.687 42.6883 35.69 42.2913 35.6924C42.2386 35.6928 42.1876 35.6931 42.1386 35.6906C41.7421 35.6706 41.2874 35.667 40.8336 35.667C40.3798 35.667 39.6423 35.837 39.0175 36.5191C38.9773 36.5631 38.9323 36.6111 38.8834 36.6633C38.1738 37.4209 36.634 39.0648 36.634 42.2002C36.634 45.544 39.062 48.7748 39.4124 49.2411L39.415 49.2444C39.4371 49.274 39.4767 49.3309 39.5333 49.4121C40.3462 50.5782 44.6615 56.7691 51.0481 59.5271C52.6732 60.2291 53.9409 60.6475 54.9303 60.9612C56.5618 61.4796 58.046 61.4068 59.22 61.2313C60.5286 61.0358 63.2487 59.5844 63.8161 57.9938C64.3836 56.4033 64.3836 55.0392 64.2136 54.7554C64.0764 54.5258 63.7545 54.3701 63.2776 54.1395C63.1633 54.0843 63.0401 54.0247 62.9086 53.9588Z" fill="#b0d0be"></path></svg>
+          </a>
+          <a href="https://t.me/+77074444140">
+            <svg class=" col m-auto" width="48px" height="48px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm21.977-68.056c.386-4.38-4.24-2.576-4.24-2.576-3.415 1.414-6.937 2.85-10.497 4.302-11.04 4.503-22.444 9.155-32.159 13.734-5.268 1.932-2.184 3.864-2.184 3.864l8.351 2.577c3.855 1.16 5.91-.129 5.91-.129l17.988-12.238c6.424-4.38 4.882-.773 3.34.773l-13.49 12.882c-2.056 1.804-1.028 3.35-.129 4.123 2.55 2.249 8.82 6.364 11.557 8.16.712.467 1.185.778 1.292.858.642.515 4.111 2.834 6.424 2.319 2.313-.516 2.57-3.479 2.57-3.479l3.083-20.226c.462-3.511.993-6.886 1.417-9.582.4-2.546.705-4.485.767-5.362Z" fill="#b0d0be"></path></svg>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    
+      <script>
+        var copy = document.querySelector(".logos-slide").cloneNode(true);
+        document.querySelector(".logos").appendChild(copy);
+      </script>
+
+
+      <script>
+        $(document).ready(function(){
+            $('.num').counterUp({
+                delay: 10,
+                time: 350
+            });
+        });
+      </script>
+
+      <script>
+      $('#btn_1').click(function(){
+        const btn_1 = document.querySelector('#btn_1')
+        const btn_2 = document.querySelector('#btn_2')
+        btn_1.classList.add("btn-dark")
+        btn_1.classList.remove("btn-outline-dark")
+        btn_2.classList.remove("btn-dark")
+        btn_2.classList.add("btn-outline-dark")
+      })
+      $('#btn_2').click(function(){
+        const btn_1 = document.querySelector('#btn_1')
+        const btn_2 = document.querySelector('#btn_2')
+        btn_1.classList.remove("btn-dark")
+        btn_1.classList.add("btn-outline-dark")
+        btn_2 .classList.remove("btn-outline-dark")
+        btn_2 .classList.add("btn-dark")
+      })
+      </script>
+
+
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#vue',
+    data: {
+      url:  window.location.origin,
+      error: [],
+      name: null,
+      number: null,
+      email: null,
+    },
+    delimiters: ['{', '}'],
+    methods: {
+      getSend(){
+        if (this.name && this.number && this.email) {
+        document.getElementById('send').disabled = true;
+        let valid_name = document.getElementById('valid_name');
+        valid_name.style.display = 'none';
+        let valid_number = document.getElementById('valid_number');
+        valid_number.style.display = 'none';
+        let valid_email = document.getElementById('valid_email');
+        valid_email.style.display = 'none';
+        let valid_send = document.getElementById('valid_send');
+        valid_send.style.display = 'block';
+        axios.get(this.url + `/send_gmail/${this.name}/${this.number}/${this.email}`, {
+          headers: {
+            'Access-Control-Allow-Origin':'*'
+          }
+        })
+        // console.log(this.url + `/send_gmail/${this.name}/${this.number}/${this.email}`)        
+      }
+
+      if (!this.name) {
+        // this.error.push('Требуется указать имя.');
+        let valid_name = document.getElementById('valid_name');
+        valid_name.style.display = 'block';
+      }
+      if (!this.number) {
+        // this.error.push('Требуется указать имя.');
+        let valid_number = document.getElementById('valid_number');
+        valid_number.style.display = 'block';
+      }
+      if (!this.email) {
+        // this.error.push('Требуется указать имя.');
+        let valid_email = document.getElementById('valid_email');
+        valid_email.style.display = 'block';
+      }
+    },
+  }
+  })
+
+</script>
+
+
+</body>
+</html>
